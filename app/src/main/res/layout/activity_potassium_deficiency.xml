@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".PotassiumDeficiencyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/plant_green"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="16dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@android:color/white"
+                android:contentDescription="Back" />
+
+            <!-- Header Title -->
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Potassium (K) Deficiency"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Header Description -->
+            <TextView
+                android:id="@+id/headerDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Potassium is the great regulator. It's vital for overall plant vigor, water movement, disease resistance, and producing strong stems and quality fruit/flowers."
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:alpha="0.9" />
+
+        </LinearLayout>
+
+        <!-- Main Content Container -->
+        <LinearLayout
+            android:id="@+id/deficiencySectionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Bell outline -->
+    <path
+        android:pathData="M12,2 C13.1,2 14,2.9 14,4 C14,4.1 14,4.2 14,4.3 C16.3,5.2 18,7.5 18,10 L18,16 L20,18 L20,19 L4,19 L4,18 L6,16 L6,10 C6,7.5 7.7,5.2 10,4.3 C10,4.2 10,4.1 10,4 C10,2.9 10.9,2 12,2 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Bell bottom -->
+    <path
+        android:pathData="M9,21 C9,22.1 9.9,23 11,23 L13,23 C14.1,23 15,22.1 15,21"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Plus sign background circle -->
+    <path
+        android:pathData="M18,1 C21.31,1 24,3.69 24,7 C24,10.31 21.31,13 18,13 C14.69,13 12,10.31 12,7 C12,3.69 14.69,1 18,1 Z"
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="1"/>
+
+    <!-- Plus sign horizontal line -->
+    <path
+        android:pathData="M16,6 L20,6"
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+
+    <!-- Plus sign vertical line -->
+    <path
+        android:pathData="M18,4 L18,8"
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+
+</vector>

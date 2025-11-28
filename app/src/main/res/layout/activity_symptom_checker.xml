@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_symptom_checker.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E8F4FD">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Affected Part"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select affected area of plant"
+            android:textSize="16sp"
+            android:textColor="#718096" />
+
+    </LinearLayout>
+
+    <!-- Cards Grid -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- First Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- Leaves Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardLeaves"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Image -->
+                        <ImageView
+                            android:id="@+id/backgroundImageLeaves"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/leaves_background"
+                            android:alpha="0.3" />
+
+                        <!-- Colored Overlay -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#804A9B47" />
+
+                        <!-- Content Layout -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iconLeaves"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_leaf"
+                                android:alpha="0.3"
+                                app:tint="#FFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Leaves"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Leaves develop spots, curl, are discolored, and more"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:alpha="0.9" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Flower Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFlower"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Image -->
+                        <ImageView
+                            android:id="@+id/backgroundImageFlower"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flower_background"
+                            android:alpha="0.3" />
+
+                        <!-- Colored Overlay -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#806B7280" />
+
+                        <!-- Content Layout -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iconFlower"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_flower"
+                                android:alpha="0.3"
+                                app:tint="#FFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Flower"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Flowers are wilting, appear dull and dry, or aren't blooming"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:alpha="0.9" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Second Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- Stem Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardStem"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Image -->
+                        <ImageView
+                            android:id="@+id/backgroundImageStem"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/stem_background"
+                            android:alpha="0.3" />
+
+                        <!-- Colored Overlay -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#804A9B47" />
+
+                        <!-- Content Layout -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iconStem"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_stem"
+                                android:alpha="0.3"
+                                app:tint="#FFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stem"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stem may bend, crack, become discolored, or more"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:alpha="0.9" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Fruits Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFruits"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Image -->
+                        <ImageView
+                            android:id="@+id/backgroundImageFruits"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/fruits_background"
+                            android:alpha="0.3" />
+
+                        <!-- Colored Overlay -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#80A53E3E" />
+
+                        <!-- Content Layout -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iconFruits"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_fruit"
+                                android:alpha="0.3"
+                                app:tint="#FFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Fruits"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Deformed fruits, spots, premature fruit fall, and more"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:alpha="0.9" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Third Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Roots Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRoots"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Image -->
+                        <ImageView
+                            android:id="@+id/backgroundImageRoots"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/roots_background"
+                            android:alpha="0.3" />
+
+                        <!-- Colored Overlay -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#806B7280" />
+
+                        <!-- Content Layout -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iconRoots"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_roots"
+                                android:alpha="0.3"
+                                app:tint="#FFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Roots"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Root problems such as rot, desiccation, or gall formation"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:alpha="0.9" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Whole Plant Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardWholePlant"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Image -->
+                        <ImageView
+                            android:id="@+id/backgroundImageWholePlant"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/whole_plant_background"
+                            android:alpha="0.3" />
+
+                        <!-- Colored Overlay -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#804A9B47" />
+
+                        <!-- Content Layout -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iconWholePlant"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_plant"
+                                android:alpha="0.3"
+                                app:tint="#FFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Whole Plant"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Wilting, drying, and various other plant issues"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:alpha="0.9" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

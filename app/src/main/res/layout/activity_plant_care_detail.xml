@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Loading -->
+        <LinearLayout
+            android:id="@+id/loadingContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Image and Names -->
+        <ImageView
+            android:id="@+id/plantImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop" />
+
+        <TextView android:id="@+id/plantNameText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:textSize="18sp" />
+        <TextView android:id="@+id/scientificNameText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/familyNameText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/confidenceText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+        <!-- Health -->
+        <androidx.cardview.widget.CardView android:id="@+id/healthStatusCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/healthStatusIcon" android:layout_width="48dp" android:layout_height="48dp" />
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/healthStatusText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/healthScoreProgress" android:layout_width="48dp" android:layout_height="48dp" />
+                    <TextView android:id="@+id/healthScoreText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Watering -->
+        <androidx.cardview.widget.CardView android:id="@+id/wateringCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
+                <TextView android:id="@+id/wateringText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/wateringDaysLeft" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/wateringProgress" android:layout_width="match_parent" android:layout_height="8dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/waterButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mark as Watered" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Lighting -->
+        <androidx.cardview.widget.CardView android:id="@+id/lightingCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="12dp">
+                <ImageView android:id="@+id/lightingIcon" android:layout_width="48dp" android:layout_height="48dp" />
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/lightingText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@+id/lightRequirementText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Temperature -->
+        <androidx.cardview.widget.CardView android:id="@+id/temperatureCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="12dp">
+                <ImageView android:id="@+id/temperatureIcon" android:layout_width="48dp" android:layout_height="48dp" />
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/temperatureText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@+id/temperatureRangeText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Humidity -->
+        <androidx.cardview.widget.CardView android:id="@+id/humidityCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/humidityText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/humiditySlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Humidity level slider" />
+                <TextView android:id="@+id/humidityPercentText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fertilizing -->
+        <androidx.cardview.widget.CardView android:id="@+id/fertilizingCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/fertilizingText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/fertilizingProgress" android:layout_width="match_parent" android:layout_height="8dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/fertilizeButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mark as Fertilized" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Pruning -->
+        <androidx.cardview.widget.CardView android:id="@+id/pruningCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/pruningText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/pruningSeasonText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Soil -->
+        <androidx.cardview.widget.CardView android:id="@+id/soilCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/soilText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/soilTypeText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Description & Facts -->
+        <TextView android:id="@+id/plantDescriptionText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+        <TextView android:id="@+id/plantFactsText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+
+        <!-- Problems -->
+        <LinearLayout android:id="@+id/problemsContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+            <com.google.android.material.chip.ChipGroup android:id="@+id/problemsChipGroup" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Toxicity -->
+        <LinearLayout android:id="@+id/toxicityWarning" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+            <TextView android:id="@+id/toxicityText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+        <!-- Care History -->
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/careHistoryRecyclerView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+
+        <!-- Buttons -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/setReminderButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Set Reminder" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/addToMyPlantsButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Add to My Plants" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/shareButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Share" />
+
+    </LinearLayout>
+</ScrollView>

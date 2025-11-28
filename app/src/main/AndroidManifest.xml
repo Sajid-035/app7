@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.plantidt">
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Camera feature -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.PlantIdt"
+        tools:targetApi="31">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.plantidt.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".MyPlantsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.PlantIdt.NoActionBar">
+        </activity>
+        <activity
+            android:name=".CareTipsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".IndoorPlantsCareActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+
+        <activity
+            android:name=".OutdoorPlantsCareActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+
+        <activity
+            android:name=".SymptomDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".SetReminderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+
+        <!-- ADD THIS: DiagnoseActivity declaration -->
+        <activity
+            android:name=".DiagnoseActivity"
+            android:exported="false"
+            android:label="Plant Diagnosis"
+            android:parentActivityName=".MainActivity" />
+
+        <activity android:name=".PlantResultActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".DiscolorationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".DistortedFlowerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+
+        <activity
+            android:name=".JointFlowersActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".PotassiumDeficiencyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".NitrogenDeficiencyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".RootAphidsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".ThripsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".DullAndDryFlowerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".AllDiseasesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"
+            android:parentActivityName=".DiagnoseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DiagnoseActivity" />
+        </activity>
+        <activity
+            android:name=".AllPestsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"
+            android:parentActivityName=".DiagnoseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DiagnoseActivity" />
+        </activity>
+        <activity
+            android:name=".DeformedFlowerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".SpotsOnLeavesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".DroopyLeavesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".YellowLeavesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".BrownLeavesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".GuideDetailActivity"
+            android:exported="false"
+            android:label="Plant Guide Detail"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".ProblemSolutionActivity"
+            android:exported="false"
+            android:label="Problem Solution"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".PlantCareDetailActivity"
+            android:exported="false"
+            android:label="Plant Care Detail"
+            android:theme="@style/Theme.PlantIdt.NoActionBar"/>
+        <activity
+            android:name=".PlantGuideActivity"
+            android:exported="false"
+            android:label="Plant Care Guide"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".SymptomCheckerActivity"
+            android:exported="false"
+            android:label="Plant Symptom Checker"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PlantIdt.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- File Provider for camera capture -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.plantidt.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

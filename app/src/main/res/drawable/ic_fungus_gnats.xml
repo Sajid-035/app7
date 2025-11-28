@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Fungus Gnat Body -->
+    <path
+        android:fillColor="#4A4A4A"
+        android:pathData="M12,8c-1.5,0 -2.5,1 -2.5,2.5v4c0,1.5 1,2.5 2.5,2.5s2.5,-1 2.5,-2.5v-4C14.5,9 13.5,8 12,8z" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="#2A2A2A"
+        android:pathData="M12,5.5C13.4,5.5 14.5,6.6 14.5,7C14.5,7.4 13.4,8.5 12,8.5C10.6,8.5 9.5,7.4 9.5,7C9.5,6.6 10.6,5.5 12,5.5Z" />
+
+    <!-- Wings -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:fillAlpha="0.8"
+        android:pathData="M10,9.5c-2,0 -3.5,0.5 -3.5,1.5s1.5,1.5 3.5,1.5"
+        android:strokeWidth="0.5"
+        android:strokeColor="#CCCCCC" />
+
+    <path
+        android:fillColor="#E0E0E0"
+        android:fillAlpha="0.8"
+        android:pathData="M14,9.5c2,0 3.5,0.5 3.5,1.5s-1.5,1.5 -3.5,1.5"
+        android:strokeWidth="0.5"
+        android:strokeColor="#CCCCCC" />
+
+    <!-- Antennae -->
+    <path
+        android:strokeColor="#2A2A2A"
+        android:strokeWidth="0.5"
+        android:pathData="M11,6.5L10,5.5" />
+
+    <path
+        android:strokeColor="#2A2A2A"
+        android:strokeWidth="0.5"
+        android:pathData="M13,6.5L14,5.5" />
+
+    <!-- Legs -->
+    <path
+        android:strokeColor="#2A2A2A"
+        android:strokeWidth="0.5"
+        android:pathData="M10.5,11L9,13" />
+
+    <path
+        android:strokeColor="#2A2A2A"
+        android:strokeWidth="0.5"
+        android:pathData="M13.5,11L15,13" />
+
+    <path
+        android:strokeColor="#2A2A2A"
+        android:strokeWidth="0.5"
+        android:pathData="M10.5,13L8.5,15" />
+
+    <path
+        android:strokeColor="#2A2A2A"
+        android:strokeWidth="0.5"
+        android:pathData="M13.5,13L15.5,15" />
+
+</vector>

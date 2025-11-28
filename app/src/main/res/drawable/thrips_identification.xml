@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Bug body -->
+    <path
+        android:fillColor="@color/warning_orange"
+        android:pathData="M12,4c-2,0 -3.5,1 -4,2.5c-0.5,1.5 -0.5,3 0,4.5c0.5,1.5 2,2.5 4,2.5s3.5,-1 4,-2.5c0.5,-1.5 0.5,-3 0,-4.5C15.5,5 14,4 12,4z"/>
+
+    <!-- Bug head (circle as path) -->
+    <path
+        android:fillColor="@color/warning_orange_dark"
+        android:pathData="M12,2.5a1.5,1.5 0,1 1,0 3a1.5,1.5 0,1 1,0 -3z"/>
+
+    <!-- Wings -->
+    <path
+        android:fillColor="@color/plant_green_light"
+        android:pathData="M10,6l-2,-1l0,3l2,-1z"/>
+    <path
+        android:fillColor="@color/plant_green_light"
+        android:pathData="M14,6l2,-1l0,3l-2,-1z"/>
+
+    <!-- Legs -->
+    <path
+        android:strokeColor="@color/text_primary"
+        android:strokeWidth="1"
+        android:pathData="M9,8l-1.5,1.5"/>
+    <path
+        android:strokeColor="@color/text_primary"
+        android:strokeWidth="1"
+        android:pathData="M15,8l1.5,1.5"/>
+    <path
+        android:strokeColor="@color/text_primary"
+        android:strokeWidth="1"
+        android:pathData="M9,10l-1.5,1.5"/>
+    <path
+        android:strokeColor="@color/text_primary"
+        android:strokeWidth="1"
+        android:pathData="M15,10l1.5,1.5"/>
+
+    <!-- Magnifying glass (circle as path) -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/solution_blue"
+        android:strokeWidth="2"
+        android:pathData="M18,13a3,3 0,1 1,0 6a3,3 0,1 1,0 -6z"/>
+    <path
+        android:strokeColor="@color/solution_blue"
+        android:strokeWidth="2"
+        android:pathData="M20.5,18.5L22,20"/>
+</vector>

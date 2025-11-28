@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Bell outline -->
+    <path
+        android:pathData="M12,2 C13.1,2 14,2.9 14,4 C14,4.1 14,4.2 14,4.3 C16.3,5.2 18,7.5 18,10 L18,16 L20,18 L20,19 L4,19 L4,18 L6,16 L6,10 C6,7.5 7.7,5.2 10,4.3 C10,4.2 10,4.1 10,4 C10,2.9 10.9,2 12,2 Z"
+        android:fillColor="#4CAF50"/>
+
+    <!-- Bell bottom -->
+    <path
+        android:pathData="M9,21 C9,22.1 9.9,23 11,23 L13,23 C14.1,23 15,22.1 15,21"
+        android:fillColor="#4CAF50"/>
+
+</vector>

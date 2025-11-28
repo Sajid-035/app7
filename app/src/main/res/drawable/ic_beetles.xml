@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Beetle Body (ellipse converted to path) -->
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M12,7C16.4,7 20,9.7 20,13C20,16.3 16.4,19 12,19C7.6,19 4,16.3 4,13C4,9.7 7.6,7 12,7Z" />
+
+    <!-- Wing Covers (Elytra) -->
+    <path
+        android:fillColor="#6D4C41"
+        android:pathData="M10.5,8C12.5,8 14.5,9.8 14.5,12C14.5,14.2 12.5,16 10.5,16C8.5,16 6.5,14.2 6.5,12C6.5,9.8 8.5,8 10.5,8Z" />
+
+    <path
+        android:fillColor="#6D4C41"
+        android:pathData="M13.5,8C15.5,8 17.5,9.8 17.5,12C17.5,14.2 15.5,16 13.5,16C11.5,16 9.5,14.2 9.5,12C9.5,9.8 11.5,8 13.5,8Z" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="#4A2C2A"
+        android:pathData="M12,5C14.5,5 16.5,6 16.5,7C16.5,8 14.5,9 12,9C9.5,9 7.5,8 7.5,7C7.5,6 9.5,5 12,5Z" />
+
+    <!-- Eyes -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M11,6C11.3,6 11.5,6.2 11.5,6.5C11.5,6.8 11.3,7 11,7C10.7,7 10.5,6.8 10.5,6.5C10.5,6.2 10.7,6 11,6Z" />
+
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M13,6C13.3,6 13.5,6.2 13.5,6.5C13.5,6.8 13.3,7 13,7C12.7,7 12.5,6.8 12.5,6.5C12.5,6.2 12.7,6 13,6Z" />
+
+    <!-- Antennae -->
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="0.8"
+        android:pathData="M10.5,6L9,4.5"
+        android:strokeLineCap="round" />
+
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="0.8"
+        android:pathData="M13.5,6L15,4.5"
+        android:strokeLineCap="round" />
+
+    <!-- Antenna clubs -->
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M9,4.1C9.2,4.1 9.4,4.3 9.4,4.5C9.4,4.7 9.2,4.9 9,4.9C8.8,4.9 8.6,4.7 8.6,4.5C8.6,4.3 8.8,4.1 9,4.1Z" />
+
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M15,4.1C15.2,4.1 15.4,4.3 15.4,4.5C15.4,4.7 15.2,4.9 15,4.9C14.8,4.9 14.6,4.7 14.6,4.5C14.6,4.3 14.8,4.1 15,4.1Z" />
+
+    <!-- Legs -->
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="1"
+        android:pathData="M8.5,11L7,13"
+        android:strokeLineCap="round" />
+
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="1"
+        android:pathData="M15.5,11L17,13"
+        android:strokeLineCap="round" />
+
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="1"
+        android:pathData="M8,13L6.5,15"
+        android:strokeLineCap="round" />
+
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="1"
+        android:pathData="M16,13L17.5,15"
+        android:strokeLineCap="round" />
+
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="1"
+        android:pathData="M8.5,15L7,17"
+        android:strokeLineCap="round" />
+
+    <path
+        android:strokeColor="#3E2723"
+        android:strokeWidth="1"
+        android:pathData="M15.5,15L17,17"
+        android:strokeLineCap="round" />
+
+    <!-- Wing cover line -->
+    <path
+        android:strokeColor="#4A2C2A"
+        android:strokeWidth="0.5"
+        android:pathData="M12,8v8" />
+
+    <!-- Body segments -->
+    <path
+        android:strokeColor="#4A2C2A"
+        android:strokeWidth="0.3"
+        android:pathData="M8,10h8M8,12h8M8,14h8M8,16h8" />
+
+</vector>

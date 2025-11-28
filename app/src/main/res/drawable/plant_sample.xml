@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Background -->
+    <path
+        android:fillColor="#E8F5E8"
+        android:pathData="M0,0 L120,0 L120,120 L0,120 Z" />
+
+    <!-- Plant Pot -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M35,80 L85,80 L80,110 L40,110 Z" />
+
+    <!-- Pot Rim -->
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M30,75 L90,75 L85,85 L35,85 Z" />
+
+    <!-- Main Stem -->
+    <path
+        android:fillColor="#4CAF50"
+        android:strokeColor="#388E3C"
+        android:strokeWidth="2"
+        android:pathData="M60,80 L60,45" />
+
+    <!-- Large Leaf 1 -->
+    <path
+        android:fillColor="#66BB6A"
+        android:pathData="M60,55 Q35,45 25,20 Q35,10 60,25 Z" />
+
+    <!-- Large Leaf 2 -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M60,55 Q85,45 95,20 Q85,10 60,25 Z" />
+
+    <!-- Medium Leaf 1 -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M60,65 Q40,55 30,35 Q40,25 60,40 Z" />
+
+    <!-- Medium Leaf 2 -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M60,65 Q80,55 90,35 Q80,25 60,40 Z" />
+
+    <!-- Small Center Leaf -->
+    <path
+        android:fillColor="#A5D6A7"
+        android:pathData="M60,45 Q55,25 60,15 Q65,25 60,45 Z" />
+
+    <!-- Leaf Veins -->
+    <path
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1"
+        android:pathData="M45,35 Q50,30 55,35" />
+
+    <path
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1"
+        android:pathData="M65,35 Q70,30 75,35" />
+
+    <path
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1"
+        android:pathData="M60,35 Q60,25 60,20" />
+
+</vector>

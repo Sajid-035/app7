@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Damaged leaf -->
+    <path
+        android:fillColor="@color/plant_green_light"
+        android:pathData="M12,4c-4,0 -7,3 -7,7c0,4 3,7 7,7c4,0 7,-3 7,-7C19,7 16,4 12,4z"/>
+
+    <!-- Leaf veins -->
+    <path
+        android:strokeColor="@color/plant_green_dark"
+        android:strokeWidth="1"
+        android:pathData="M12,4l0,14"/>
+    <path
+        android:strokeColor="@color/plant_green_dark"
+        android:strokeWidth="0.5"
+        android:pathData="M12,8l-3,2"/>
+    <path
+        android:strokeColor="@color/plant_green_dark"
+        android:strokeWidth="0.5"
+        android:pathData="M12,8l3,2"/>
+    <path
+        android:strokeColor="@color/plant_green_dark"
+        android:strokeWidth="0.5"
+        android:pathData="M12,12l-3,2"/>
+    <path
+        android:strokeColor="@color/plant_green_dark"
+        android:strokeWidth="0.5"
+        android:pathData="M12,12l3,2"/>
+
+    <!-- Silvery damage spots (circles as paths) -->
+    <path
+        android:fillColor="@color/background_gray"
+        android:pathData="M10,8a1,1 0,1 1,0 2a1,1 0,1 1,0 -2z"/>
+    <path
+        android:fillColor="@color/gray"
+        android:pathData="M14,10.2a0.8,0.8 0,1 1,0 1.6a0.8,0.8 0,1 1,0 -1.6z"/>
+    <path
+        android:fillColor="@color/gray"
+        android:pathData="M11,12.4a0.6,0.6 0,1 1,0 1.2a0.6,0.6 0,1 1,0 -1.2z"/>
+    <path
+        android:fillColor="@color/background_gray"
+        android:pathData="M15,13.3a0.7,0.7 0,1 1,0 1.4a0.7,0.7 0,1 1,0 -1.4z"/>
+
+    <!-- Black specks (thrips excrement) -->
+    <path
+        android:fillColor="@color/text_primary"
+        android:pathData="M9.5,9.2a0.3,0.3 0,1 1,0 0.6a0.3,0.3 0,1 1,0 -0.6z"/>
+    <path
+        android:fillColor="@color/text_primary"
+        android:pathData="M13.5,11.2a0.3,0.3 0,1 1,0 0.6a0.3,0.3 0,1 1,0 -0.6z"/>
+    <path
+        android:fillColor="@color/text_primary"
+        android:pathData="M11.5,12.2a0.3,0.3 0,1 1,0 0.6a0.3,0.3 0,1 1,0 -0.6z"/>
+    <path
+        android:fillColor="@color/text_primary"
+        android:pathData="M14.5,13.2a0.3,0.3 0,1 1,0 0.6a0.3,0.3 0,1 1,0 -0.6z"/>
+    <path
+        android:fillColor="@color/text_primary"
+        android:pathData="M10.5,14.2a0.3,0.3 0,1 1,0 0.6a0.3,0.3 0,1 1,0 -0.6z"/>
+
+    <!-- Scraped lines -->
+    <path
+        android:strokeColor="@color/text_secondary"
+        android:strokeWidth="0.5"
+        android:pathData="M8,10l2,0"/>
+    <path
+        android:strokeColor="@color/text_secondary"
+        android:strokeWidth="0.5"
+        android:pathData="M13,12l2,0"/>
+    <path
+        android:strokeColor="@color/text_secondary"
+        android:strokeWidth="0.5"
+        android:pathData="M9,14l2,0"/>
+</vector>

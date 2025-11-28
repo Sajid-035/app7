@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Flying bug -->
+    <path
+        android:fillColor="@color/warning_orange"
+        android:pathData="M8,12c-1,0 -1.5,0.5 -2,1c-0.5,0.5 -0.5,1.5 0,2c0.5,0.5 1,1 2,1s1.5,-0.5 2,-1c0.5,-0.5 0.5,-1.5 0,-2C9.5,12.5 9,12 8,12z"/>
+
+    <!-- Wings (flying motion) -->
+    <path
+        android:fillColor="@color/plant_green_light"
+        android:pathData="M7,12l-1.5,-1.5l0,2l1.5,-0.5z"/>
+    <path
+        android:fillColor="@color/plant_green_light"
+        android:pathData="M9,12l1.5,-1.5l0,2l-1.5,-0.5z"/>
+
+    <!-- Movement arrows -->
+    <path
+        android:strokeColor="@color/solution_blue"
+        android:strokeWidth="2"
+        android:pathData="M4,8l4,4l-4,4"/>
+    <path
+        android:strokeColor="@color/solution_blue"
+        android:strokeWidth="2"
+        android:pathData="M12,8l4,4l-4,4"/>
+
+    <!-- Window frame -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/text_primary"
+        android:strokeWidth="1.5"
+        android:pathData="M17,4l4,0l0,6l-4,0z"/>
+    <path
+        android:strokeColor="@color/text_primary"
+        android:strokeWidth="1"
+        android:pathData="M19,4l0,6"/>
+    <path
+        android:strokeColor="@color/text_primary"
+        android:strokeWidth="1"
+        android:pathData="M17,7l4,0"/>
+
+    <!-- Plant -->
+    <path
+        android:fillColor="@color/plant_green"
+        android:pathData="M19,16c0,-1 -0.5,-2 -1,-2.5c-0.5,-0.5 -1.5,-0.5 -2,0c-0.5,0.5 -1,1.5 -1,2.5c0,1 0.5,2 1,2.5c0.5,0.5 1.5,0.5 2,0C18.5,18 19,17 19,16z"/>
+
+    <!-- Stem -->
+    <path
+        android:strokeColor="@color/plant_green_dark"
+        android:strokeWidth="2"
+        android:pathData="M17,18l0,4"/>
+</vector>

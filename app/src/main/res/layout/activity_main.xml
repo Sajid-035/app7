@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_gradient_bg"
+    tools:context=".MainActivity">
+
+    <!-- Header with Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="8dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/header_gradient_bg"
+            app:contentInsetStart="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
+
+                <!-- Menu Icon -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/menuCard"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="#33FFFFFF"
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/menuIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_menu"
+                        app:tint="@android:color/white" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Search Bar -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="#33FFFFFF"
+                    app:cardElevation="0dp">
+
+                    <EditText
+                        android:id="@+id/searchEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="Search plants..."
+                        android:textColorHint="#B3FFFFFF"
+                        android:textColor="@android:color/white"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="14sp"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Notification Icon -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/notificationCard"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="#33FFFFFF"
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/notificationIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_notifications"
+                            app:tint="@android:color/white" />
+
+                        <View
+                            android:id="@+id/notificationDot"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_gravity="top|end"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/notification_dot" />
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Navigation Pills -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F8F9FA"
+                android:padding="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/navHome"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🏠 Home"
+                            android:textAlignment="center"
+                            android:padding="12dp"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/nav_pill_active"
+                            android:textColor="@android:color/white"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                        <TextView
+                            android:id="@+id/navMyPlants"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🌱 My Plants"
+                            android:textAlignment="center"
+                            android:padding="12dp"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/nav_pill_inactive"
+                            android:textColor="#666666"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                        <TextView
+                            android:id="@+id/navDiagnose"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🔍 Diagnose"
+                            android:textAlignment="center"
+                            android:padding="12dp"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/nav_pill_inactive"
+                            android:textColor="#666666"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Upload Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="25dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginBottom="25dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upload_gradient_bg"
+                        android:orientation="vertical"
+                        android:padding="30dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plant Health Check"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp" />
+
+                        <TextView
+                            android:id="@+id/uploadSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="Upload or capture your plant image for instant diagnosis"
+                            android:textColor="#E6FFFFFF"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uploadBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="8dp"
+                                app:cardCornerRadius="15dp"
+                                app:cardBackgroundColor="#33FFFFFF"
+                                app:cardElevation="0dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?android:attr/selectableItemBackground">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="15dp"
+                                    android:gravity="center">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        app:cardCornerRadius="15dp"
+                                        app:cardBackgroundColor="#4DFFFFFF"
+                                        app:cardElevation="0dp"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:text="📁"
+                                            android:textAlignment="center"
+                                            android:gravity="center"
+                                            android:textSize="16sp" />
+
+                                    </androidx.cardview.widget.CardView>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Upload Image"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12sp" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/captureBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                app:cardCornerRadius="15dp"
+                                app:cardBackgroundColor="#33FFFFFF"
+                                app:cardElevation="0dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?android:attr/selectableItemBackground">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="15dp"
+                                    android:gravity="center">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        app:cardCornerRadius="15dp"
+                                        app:cardBackgroundColor="#4DFFFFFF"
+                                        app:cardElevation="0dp"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:text="📷"
+                                            android:textAlignment="center"
+                                            android:gravity="center"
+                                            android:textSize="16sp" />
+
+                                    </androidx.cardview.widget.CardView>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Take Photo"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12sp" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature Cards -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Plant Guide Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/guideCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/guide_card_bg">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="plant guide"
+                                    android:textColor="#2D3748"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Complete care instructions and growing tips for your plants"
+                                    android:textColor="#4A5568"
+                                    android:textSize="14sp"
+                                    android:lineSpacingMultiplier="1.5" />
+
+                            </LinearLayout>
+
+                            <!-- Plant Icon -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="20dp"
+                                app:cardCornerRadius="40dp"
+                                app:cardElevation="8dp"
+                                app:cardBackgroundColor="@android:color/white">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="🌿"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:textSize="35sp" />
+
+                            </androidx.cardview.widget.CardView>
+
+                        </FrameLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Symptom Checker Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/symptomCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="8dp"
+                        android:layout_marginBottom="25dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/symptom_card_bg">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="symptom checker"
+                                    android:textColor="#2D3748"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Identify plant issues and get instant diagnosis"
+                                    android:textColor="#4A5568"
+                                    android:textSize="14sp"
+                                    android:lineSpacingMultiplier="1.5" />
+
+                            </LinearLayout>
+
+                            <!-- Plant Icon with Magnifying Glass -->
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="20dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    app:cardCornerRadius="40dp"
+                                    app:cardElevation="8dp"
+                                    app:cardBackgroundColor="@android:color/white">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="🌱"
+                                        android:textAlignment="center"
+                                        android:gravity="center"
+                                        android:textSize="35sp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="top|end"
+                                    app:cardCornerRadius="17dp"
+                                    app:cardBackgroundColor="#1A667EEA"
+                                    app:cardElevation="0dp">
+
+                                    <View
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/magnifying_glass" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </FrameLayout>
+
+                        </FrameLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <!-- Quick Actions -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quick Actions"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="15dp" />
+
+                    <!-- Water Reminder -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/waterReminderCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="15dp"
+                            android:gravity="center_vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardBackgroundColor="#667EEA"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="💧"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:textSize="16sp" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Water Reminder"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="12dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Fertilizer Schedule -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fertilizerCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="15dp"
+                            android:gravity="center_vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardBackgroundColor="#F093FB"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="🌿"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:textSize="16sp" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fertilizer Schedule"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="12dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Care Tips -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/careTipsCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        android:layout_marginBottom="20dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="15dp"
+                            android:gravity="center_vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardBackgroundColor="#4FACFE"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="☀️"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:textSize="16sp" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Care Tips"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="12dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

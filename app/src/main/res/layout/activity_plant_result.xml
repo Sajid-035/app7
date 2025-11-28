@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".PlantResultActivity">
+
+    <!-- Loading and Error Layouts (No changes here) -->
+    <ProgressBar
+        android:id="@+id/loadingProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/errorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_error"
+            android:contentDescription="@string/desc_error_icon"
+            app:tint="@color/error_color" />
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/error_loading_plant_data"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retryButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/retry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back_b"
+            app:title="@string/identification_result"
+            app:titleTextColor="@color/black" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Plant Image Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp">
+                    <ImageView
+                        android:id="@+id/plantImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/desc_identified_plant_image"
+                        tools:src="@drawable/ic_plant_placeholder" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Plant Basic Info Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/plantDetailsCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/card_background_dark"> <!-- Assuming you have a dark card color -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:id="@+id/plantName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            tools:text="Common Plant Name" />
+                        <TextView
+                            android:id="@+id/scientificName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/text_secondary_light"
+                            android:textSize="16sp"
+                            android:textStyle="italic"
+                            tools:text="Scientificus nameus" />
+                        <TextView
+                            android:id="@+id/familyName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/text_secondary_light"
+                            android:textSize="14sp"
+                            tools:text="Family: Plantaceae" />
+                        <TextView
+                            android:id="@+id/confidenceText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            tools:text="Confidence: 95%" />
+                        <TextView
+                            android:id="@+id/descriptionText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:lineSpacingMultiplier="1.2"
+                            android:textColor="@color/text_secondary_light"
+                            android:textSize="14sp"
+                            tools:text="A beautiful plant that requires proper care and attention." />
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/tagsChipGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:singleLine="false" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Health Assessment Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/healthAssessmentCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/card_background_dark">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/health_assessment"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                            <View
+                                android:id="@+id/healthIndicator"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/circle_background"
+                                tools:backgroundTint="@color/health_excellent" />
+                            <TextView
+                                android:id="@+id/healthScoreText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:text="85/100" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/healthStatusText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            tools:text="Excellent Health" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/healthIssuesRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:nestedScrollingEnabled="false"
+                            tools:itemCount="1"
+                            tools:listitem="@layout/health_issue_item" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Care Requirements Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/careRequirementsCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/card_background_dark">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <!-- Card Title -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/care_requirements"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/careLevelChip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                app:chipBackgroundColor="@color/care_level_medium"
+                                tools:text="Medium" />
+                        </LinearLayout>
+
+                        <!-- Care Details -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="vertical">
+                            <!-- Light -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_light" app:tint="@color/icon_tint_light" android:contentDescription="@string/desc_light_icon"/>
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/light" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/lightRequirementText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="Bright indirect light"/>
+                            </LinearLayout>
+                            <!-- Water -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_water" app:tint="@color/icon_tint_light" android:contentDescription="@string/desc_water_icon"/>
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/water" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/waterRequirementText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="Water when top inch is dry"/>
+                            </LinearLayout>
+                            <!-- Soil -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_soil" app:tint="@color/icon_tint_light" android:contentDescription="@string/desc_soil_icon"/>
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/soil" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/soilTypeText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="Well-draining potting mix"/>
+                            </LinearLayout>
+                            <!-- Temperature -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_temperature" app:tint="@color/icon_tint_light" android:contentDescription="@string/desc_temperature_icon"/>
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/temperature" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/temperatureText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="65-75°F (18-24°C)"/>
+                            </LinearLayout>
+                            <!-- Humidity -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_humidity" app:tint="@color/icon_tint_light" android:contentDescription="@string/desc_humidity_icon"/>
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/humidity" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/humidityText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="40-60%"/>
+                            </LinearLayout>
+                            <!-- Fertilizer -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_fertilizer" app:tint="@color/icon_tint_light" android:contentDescription="@string/desc_fertilizer_icon"/>
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/fertilizer" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/fertilizerText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="Monthly during growing season"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="8dp" android:layout_marginBottom="16dp" android:background="#40FFFFFF"/>
+
+                        <!-- Additional Info -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!-- Toxicity -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/toxicity" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/toxicityChip"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:textColor="@android:color/white"
+                                    app:chipBackgroundColor="@color/pet_safe"
+                                    tools:text="Pet Safe" />
+                            </LinearLayout>
+                            <!-- Growth Rate -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/growth_rate" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/growthRateText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="Medium"/>
+                            </LinearLayout>
+                            <!-- Mature Size -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/mature_size" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/matureSizeText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="2-3 feet tall"/>
+                            </LinearLayout>
+                            <!-- Bloom Time -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/bloom_time" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/bloomTimeText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="Spring to summer"/>
+                            </LinearLayout>
+                            <!-- Propagation -->
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp" android:gravity="center_vertical">
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/propagation" android:textSize="14sp" android:textStyle="bold" android:textColor="@android:color/white"/>
+                                <TextView android:id="@+id/propagationText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="14sp" android:textColor="@color/text_secondary_light" tools:text="Stem cuttings"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="8dp" android:layout_marginBottom="16dp" android:background="#40FFFFFF"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/care_instructions"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/careInstructionsRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_care_instruction" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToGardenButton"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/add_to_garden"
+                        android:textColor="@color/white"
+                        app:icon="@drawable/ic_add"
+                        app:iconTint="@color/white" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/shareButton"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/share"
+                        app:icon="@drawable/ic_share" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

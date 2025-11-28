@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F4F8">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_arrow_back_b"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Set Reminder"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/plantNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plant name"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Watering Section -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/wateringReminderSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enable Watering Reminder"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/wateringIntervalSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="1"
+                android:valueTo="30"
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/wateringIntervalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Every 7 days"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/wateringTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick Watering Time" />
+
+            <TextView
+                android:id="@+id/wateringTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9:00 AM"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Fertilizing Section -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/fertilizingReminderSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enable Fertilizing Reminder"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/fertilizingIntervalSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="1"
+                android:valueTo="12"
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/fertilizingIntervalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Every 4 weeks"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fertilizingTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick Fertilizing Time" />
+
+            <TextView
+                android:id="@+id/fertilizingTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9:00 AM"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveRemindersButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Save Reminders"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:elevation="4dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Cancel"
+        android:textAllCaps="false" />
+
+</LinearLayout>
